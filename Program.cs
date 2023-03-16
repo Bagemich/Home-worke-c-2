@@ -1,15 +1,14 @@
 ﻿int Prompt(string msg)
 {
-Console.WriteLine($"{msg}");
-return Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine($"[smg]");
+    return Convert.ToInt32(Console.ReadLine());
 }
-int number = Prompt("Введите число");
-string ss = ("Это не день недели");
-string check(int number)
+int number = Prompt("Введите трёхзначное число");
+if (number > 100 && number < 1000)
 {
-if (number >= 6 && number < 9) ss = "Это выходной";
-if (number >= 1 && number < 6) ss = "Это будни";
-return ss;
+    int mid = (number % 100 - number % 10) / 10;
+    Console.WriteLine($"Вторая цифра {number} получается {mid}");
 }
-Console.WriteLine(check(number));
 
+else
+Console.WriteLine("это фигня");
